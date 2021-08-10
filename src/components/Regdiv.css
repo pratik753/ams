@@ -1,0 +1,119 @@
+.center {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    /* padding: 10px; */
+    /* background-color: rgb(212, 229, 235); */
+}
+
+.box {
+    border: 2px solid black;
+    /* height: 10rem; */
+    /* width: 10rem; */
+}
+
+.inputname {
+    margin: 2rem;
+}
+
+.card {
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    width: 50%;
+    margin: auto;
+}
+
+.card-heading {
+    padding: 20px 0;
+    background: #2c5768;
+}
+
+.title {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
+
+.card-bodydiv {
+    padding: 34px 85px;
+    padding-bottom: 52px;
+    padding-bottom: 73px;
+    background: aliceblue;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.name {
+    width: 125px;
+    color: #555;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.value {
+    width: calc(100% - 125px);
+}
+
+.input-group-desc {
+    /* background: #e5e5e5; */
+    line-height: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.inputstyle {
+    /* background: #e5e5e5; */
+    line-height: 40px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.otpbutton {
+    /* margin-left: .5rem; */
+    background: #ff4b5a;
+    font-weight: bold;
+    color: #fff;
+    padding: 0px 3px;
+    border-radius: 18px;
+}
+
+.registerbutton {
+    width: 100%;
+    background: rgb(173, 118, 224);
+    border-radius: 1rem;
+    padding: .5rem;
+    font-weight: bold;
+    color: white;
+}
+
+@media (max-width:850px) {
+    .form-row {
+        width: 4rem;
+    }
+    .input-group-desc {
+        padding: 0 0px;
+    }
+    .card {
+        width: 80%;
+    }
+}
