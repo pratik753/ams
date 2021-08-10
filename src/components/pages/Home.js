@@ -1,7 +1,7 @@
-import Footer from "../Footer";
-import MainNavigation from "../MainNavigation";
-import Regdiv from "../Regdiv";
-import Slider from "../Slider";
+import Footer from "../nav_footer/Footer";
+import MainNavigation from "../nav_footer/MainNavigation";
+import Regdiv from "../index/Regdiv";
+import Slider from "../index/Slider";
 // import Reportvalue from "./components/Reportvalue";
 // import MainReport from "./components/MainReport";
 const Home = () => {

@@ -1,8 +1,8 @@
 // import NavBar from "../adminreport/NavBar";
-import MainNavigation from "../MainNavigation";
+import MainNavigation from "../nav_footer/MainNavigation";
 import MainReport from "../adminreport/MainReport";
 import NavBar from "../adminreport/NavBar";
-import Footer from "../Footer";
+import Footer from "../nav_footer/Footer";
 const AdminReport = () => {
   return (
     <>

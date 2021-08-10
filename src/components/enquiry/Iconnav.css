@@ -1,0 +1,40 @@
+.contain {
+    margin-left: 3rem;
+}
+
+.iconcont {
+    margin: 5rem;
+}
+
+.iconbox {
+    width: 5rem;
+    height: 5rem;
+    background-color: #005197;
+    border-radius: 4rem;
+    box-shadow: 0 1px 5px 1px rgba(97, 97, 97, 0.65);
+    margin-bottom: 4rem;
+    border: 2px solid #fff;
+    /* padding: 4rem; */
+}
+
+.texticon {
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.textheading {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.iconbox:hover {
+    background-color: #85adcf;
+}
+
+.iconstyle {
+    height: 5rem;
+    width: 5rem;
+}

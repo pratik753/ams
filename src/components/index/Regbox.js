@@ -1,42 +1,37 @@
+import { useRef } from "react";
 import { useState } from "react";
 import "./Regdiv.css";
-const Regdiv = () => {
+
+const Regbox = (props) => {
   const [emailotp, setotpemail] = useState(false);
   const [phoneotp, setotpphone] = useState(false);
+  const [loginbox, setloginbox] = useState(false);
+  const [otpshow, setotpshow] = useState(false);
+  const phonenum = useRef();
+
+  const otpbuttonshow = () => {
+    if (phonenum.current.value.length == 10) {
+      setotpshow(true);
+      console.log("10..");
+    } else {
+      setotpshow(false);
+    }
+    console.log("hii");
+    console.log(phonenum.current.value.length);
+  };
+
   const emailotphandler = () => {
     setotpemail(true);
   };
   const phoneotphandler = () => {
     setotpphone(true);
   };
+  const loginboxhandler = () => {
+    setloginbox(true);
+    props.onregbox(loginbox);
+  };
   return (
     <>
-      {/* <h2>Register Yourself</h2>
-      <div className="center">
-        <hr />
-        <div className="box">
-          <label className="name">Name</label>
-          <input className="inputname" type="text" placeholder="Name" />
-          <label className="name">Email</label>
-          <input className="inputname" type="text" />
-          {<button>OTP</button>}
-          <input className="inputname" type="text" placeholder="OTP" />
-          <br />
-          <label className="name">Phone number</label>
-          <input className="inputname" type="text" />
-          {<button>OTP</button>}
-          <input className="inputname" type="text" placeholder="OTP" />
-          <button>Submit</button>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br /> */}
-
-      {/* <hr /> */}
-      <br />
-      <br />
       <div className="card">
         <div className="card-heading">
           <h2 className="title">Register Yourself</h2>
@@ -66,11 +61,11 @@ const Regdiv = () => {
                   name="email"
                   placeholder="Email"
                 />
-                <button className="otpbutton" onClick={emailotphandler}>
+                {/* <button className="otpbutton" onClick={emailotphandler}>
                   OTP
-                </button>
+                </button> */}
               </div>
-              <div className="input-group-desc">
+              {/* <div className="input-group-desc">
                 {emailotp && (
                   <input
                     className="inputstyle"
@@ -80,8 +75,8 @@ const Regdiv = () => {
                     style={{ marginTop: ".5rem" }}
                   />
                 )}
-                {/* <button className="otpbutton">OTP</button> */}
-              </div>
+                {/* <button className="otpbutton">OTP</button> 
+              </div> */}
             </div>
           </div>
           <div className="form-row">
@@ -93,10 +88,14 @@ const Regdiv = () => {
                   type="email"
                   name="email"
                   placeholder="Phone"
+                  ref={phonenum}
+                  onChange={otpbuttonshow}
                 />
-                <button className="otpbutton" onClick={phoneotphandler}>
-                  OTP
-                </button>
+                {otpshow && (
+                  <button className="otpbutton" onClick={phoneotphandler}>
+                    OTP
+                  </button>
+                )}
               </div>
               <div className="input-group-desc">
                 {phoneotp && (
@@ -114,13 +113,18 @@ const Regdiv = () => {
           </div>
 
           <div className="form-row">
-            <div className="name">State</div>
+            <div className="name">Course</div>
             <div className="value">
               <div className="input-group-desc">
                 <select>
-                  <option>Bihar</option>
-                  <option>Jharkhand</option>
-                  <option>Orissa</option>
+                  <option>B.Tech</option>
+                  <option>M.Tech</option>
+                  <option>BCA</option>
+                  <option>MCA</option>
+                  <option>BBA</option>
+                  <option>MBA</option>
+                  <option>B.Sc.</option>
+                  <option>M.Sc.</option>
                 </select>
               </div>
 
@@ -130,13 +134,12 @@ const Regdiv = () => {
 
           <button className="registerbutton">Register</button>
           {/* </form> */}
+          <div onClick={loginboxhandler} className="regtext">
+            EXISTING USER? LOGIN
+          </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <h2>Steps to Follow : </h2>
     </>
   );
 };
-export default Regdiv;
+export default Regbox;

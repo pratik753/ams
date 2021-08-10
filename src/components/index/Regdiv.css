@@ -106,6 +106,15 @@
     color: white;
 }
 
+.regtext {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.regtext:hover {
+    color: #e90f75;
+}
+
 @media (max-width:850px) {
     .form-row {
         width: 4rem;

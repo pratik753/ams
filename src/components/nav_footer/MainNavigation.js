@@ -1,6 +1,6 @@
 import classes from "./MainNavigation.module.css";
 import { NavLink } from "react-router-dom";
-import logo from "./assists/image/logo.png";
+import logo from "../assists/image/logo.png";
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
