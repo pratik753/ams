@@ -14,6 +14,7 @@ function App() {
         <Route path="/admin" exact>
           <AdminReport />
         </Route>
+
         <Route path="/enquiry" exact>
           <Enquiry />
         </Route>
