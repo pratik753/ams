@@ -3,9 +3,7 @@ import Form from "../enquiry/Form";
 const EnquiryForm = () => {
   return (
     <>
-      {/* <Enquiry /> */}
       <Form />
-      {/* test */}
     </>
   );
 };

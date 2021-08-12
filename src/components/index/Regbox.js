@@ -116,7 +116,7 @@ const Regbox = (props) => {
             <div className="name">Course</div>
             <div className="value">
               <div className="input-group-desc">
-                <select>
+                <select id="examtype">
                   <option>B.Tech</option>
                   <option>M.Tech</option>
                   <option>BCA</option>
