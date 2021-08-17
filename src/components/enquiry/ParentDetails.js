@@ -162,15 +162,16 @@ const ParentDetails = () => {
         <Row>
           <Col>
             {" "}
-            <button className="buttonsavenext" onClick={savehandler}>
-              Save{" "}
-            </button>
-          </Col>
-          <Col>
-            {" "}
-            <button className="buttonsavenext" onClick={edithandler}>
-              Edit{" "}
-            </button>
+            {saved && (
+              <button className="buttonsavenext centbutt" onClick={savehandler}>
+                Save{" "}
+              </button>
+            )}
+            {!saved && (
+              <button className="buttonsavenext centbutt" onClick={edithandler}>
+                Edit{" "}
+              </button>
+            )}
           </Col>
         </Row>
       </Container>

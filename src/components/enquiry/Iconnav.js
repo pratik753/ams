@@ -9,6 +9,7 @@ import ParentDetails from "./ParentDetails";
 import Address from "./Address";
 import AcademicDetails from "./AcademicDetails";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Iconnav = () => {
   const styleForPaper = {
     width: "5rem",
@@ -29,21 +30,21 @@ const Iconnav = () => {
     setstylediv4("iconbox");
     setshowdiv(1);
   };
-  const Parentdetailhandlar = () => {
+  const Academicdetailhandlar = () => {
     setstylediv1("iconbox");
     setstylediv2("iconbox active");
     setstylediv3("iconbox");
     setstylediv4("iconbox");
     setshowdiv(2);
   };
-  const Addressdetailhandlar = () => {
+  const Parentdetailhandlar = () => {
     setstylediv1("iconbox");
     setstylediv2("iconbox");
     setstylediv3("iconbox active");
     setstylediv4("iconbox");
     setshowdiv(3);
   };
-  const Academicdetailhandlar = () => {
+  const Addressdetailhandlar = () => {
     setstylediv1("iconbox");
     setstylediv2("iconbox");
     setstylediv3("iconbox");
@@ -60,11 +61,11 @@ const Iconnav = () => {
     if (temp == 1) {
       Applicantdetailhandlar();
     } else if (temp == 2) {
-      Parentdetailhandlar();
-    } else if (temp == 3) {
-      Addressdetailhandlar();
-    } else if (temp == 4) {
       Academicdetailhandlar();
+    } else if (temp == 3) {
+      Parentdetailhandlar();
+    } else if (temp == 4) {
+      Addressdetailhandlar();
     }
     setshowdiv(temp);
   };
@@ -83,35 +84,37 @@ const Iconnav = () => {
               </div>
             </Col>
             <Col>
-              <div className={stylediv2} onClick={Parentdetailhandlar}>
+              <div className={stylediv2} onClick={Academicdetailhandlar}>
+                <SchoolIcon style={styleForPaper}></SchoolIcon>
+                <div className="texticon">Academic Details</div>
+              </div>
+            </Col>
+            <Col>
+              <div className={stylediv3} onClick={Parentdetailhandlar}>
                 <GroupIcon style={styleForPaper}></GroupIcon>
                 <div className="texticon">Parent's Details</div>
               </div>
             </Col>
             <Col>
-              <div className={stylediv3} onClick={Addressdetailhandlar}>
+              <div className={stylediv4} onClick={Addressdetailhandlar}>
                 <LocationOnIcon style={styleForPaper}></LocationOnIcon>
                 <div className="texticon">Address Details</div>
-              </div>
-            </Col>
-            <Col>
-              <div className={stylediv4} onClick={Academicdetailhandlar}>
-                <SchoolIcon style={styleForPaper}></SchoolIcon>
-                <div className="texticon">Academic Details</div>
               </div>
             </Col>
           </Row>
         </Container>
         <div className="formcontainer">
           {showdiv == 1 && <Applicantdetails />}
-          {showdiv == 2 && <ParentDetails />}
-          {showdiv == 3 && <Address />}
-          {showdiv == 4 && <AcademicDetails />}
+          {showdiv == 2 && <AcademicDetails />}
+          {showdiv == 3 && <ParentDetails />}
+          {showdiv == 4 && <Address />}
           <Container>
             <Row>
               <Col>
                 {" "}
-                <button className="buttonsavenext">Save & Exit</button>
+                <Link to="/profile">
+                  <button className="buttonsavenext">Save & Exit</button>
+                </Link>
               </Col>
               <Col className="divbutton">
                 {" "}

@@ -13,6 +13,10 @@
     color: white;
 }
 
+.divcont {
+    display: flex;
+}
+
 .img {
     width: 10rem;
     height: 5rem;
@@ -26,6 +30,12 @@
     color: white;
     font-size: .9rem;
     margin-right: -3rem;
+    margin-top: 2.5rem;
+}
+
+.btnsecondary {
+    color: white;
+    background-color: transparent;
 }
 
 @media (max-width:850px) {
@@ -33,6 +43,14 @@
         font-size: .8rem;
         margin-right: -3rem;
         padding: 1rem;
+        line-height: 1rem;
+    }
+}
+
+@media (min-width:1100px) {
+    .divcont {
+        display: flex;
+        margin-right: -7rem;
     }
 }
 
@@ -50,11 +68,12 @@
 
 .nav a {
     text-decoration: none;
-    color: #88dfdf;
+    color: #232424;
+    font-weight: bold;
 }
 
 .nav a:hover,
 .nav a:active,
 .nav a.active {
-    color: #e6fcfc;
+    color: #080808;
 }

@@ -3,6 +3,38 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 let temp = 1;
 const Applicantdetails = () => {
+  const [selectcourse, setselectcourse] = useState("");
+  // const sle = "Other";
+  const courses = {
+    Btech: [
+      "ETC",
+      "CS & IT",
+      "CSE",
+      "CSE AIML",
+      "CST",
+      "EE",
+      "EEE",
+      "ME",
+      "CIVIL",
+      "BIOTECH",
+    ],
+    Other: [
+      "M.Sc(Biotechnology)",
+      "B.Sc(Appl. Microbiology)",
+      "B.Sc(Biotechnology)",
+      "BCA",
+      "BBA",
+      "M.TECH(Comp. Sc.)",
+      "MTech(ETC)",
+      "MCA",
+      "MBA",
+    ],
+  };
+  const selectcoursehandler = (e) => {
+    setselectcourse(e.target.value);
+    console.log(selectcourse);
+  };
+
   const [saved, setsaved] = useState(false);
   const savehandler = () => {
     try {
@@ -155,6 +187,24 @@ const Applicantdetails = () => {
         </Row>
         <Row>
           <Col className="fieldcol">
+            <div className="name">Course</div>
+            <div className="value">
+              <div className="input-group-desc">
+                <select className="examtype" onClick={selectcoursehandler}>
+                  <option>B.Tech</option>
+                  <option>M.Tech</option>
+                  <option>BCA</option>
+                  <option>MCA</option>
+                  <option>BBA</option>
+                  <option>MBA</option>
+                  <option>B.Sc.</option>
+                  <option>M.Sc.</option>
+                </select>
+              </div>
+            </div>
+          </Col>
+
+          <Col className="fieldcol">
             <div className="labelfield">Gender</div>
             {saved && (
               <div className="input-group-desc">
@@ -182,20 +232,50 @@ const Applicantdetails = () => {
             {!saved && <div className="labelfieldinput">{datelog}</div>}
           </Col>
         </Row>
+        <Row>
+          <Col className="fieldcol">
+            <div className="labelfield">Choice 1 </div>
+            <select id="examtype" name="enquiry_course">
+              {courses.Btech.map((el) => (
+                <option value={el}>{`Btech ${el}`}</option>
+              ))}
+            </select>
+          </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">Choice 2 </div>
+            <select id="examtype" name="enquiry_course">
+              {courses.Btech.map((el) => (
+                <option value={el}>{`Btech ${el}`}</option>
+              ))}
+            </select>
+          </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">Choice 3 </div>
+            <select id="examtype" name="enquiry_course">
+              {courses.Btech.map((el) => (
+                <option value={el}>{`Btech ${el}`}</option>
+              ))}
+              {courses.Other.map((el) => (
+                <option value={el}>{el}</option>
+              ))}
+            </select>
+          </Col>
+        </Row>
       </Container>
       <Container>
         <Row>
           <Col>
             {" "}
-            <button className="buttonsavenext" onClick={savehandler}>
-              Save{" "}
-            </button>
-          </Col>
-          <Col>
-            {" "}
-            <button className="buttonsavenext" onClick={edithandler}>
-              Edit{" "}
-            </button>
+            {saved && (
+              <button className="buttonsavenext centbutt" onClick={savehandler}>
+                Save{" "}
+              </button>
+            )}
+            {!saved && (
+              <button className="buttonsavenext centbutt" onClick={edithandler}>
+                Edit{" "}
+              </button>
+            )}
           </Col>
         </Row>
       </Container>

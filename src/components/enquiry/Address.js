@@ -50,6 +50,17 @@ const Address = () => {
   };
   let Landmark = localStorage.getItem("Landmark");
 
+  const Pincodehandler = (e) => {
+    localStorage.setItem("Pincode", e.target.value);
+    setq5(localStorage.getItem("Pincode"));
+  };
+  let Pincode = localStorage.getItem("Pincode");
+  const Cityhandler = (e) => {
+    localStorage.setItem("City", e.target.value);
+    setq5(localStorage.getItem("City"));
+  };
+  let City = localStorage.getItem("City");
+
   const savehandler = () => {
     setsaved(false);
   };
@@ -95,6 +106,20 @@ const Address = () => {
               />
             )}
             {!saved && <div className="labelfieldinput">{State}</div>}
+          </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">City</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="text"
+                name="first_name"
+                placeholder="City"
+                onChange={Cityhandler}
+                value={City}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{City}</div>}
           </Col>
         </Row>
         <Row>
@@ -158,21 +183,36 @@ const Address = () => {
             )}
             {!saved && <div className="labelfieldinput">{Landmark}</div>}
           </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">PinCode</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="number"
+                name="first_name"
+                placeholder="Pincode"
+                value={Pincode}
+                onChange={Pincodehandler}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{Pincode}</div>}
+          </Col>
         </Row>
       </Container>
       <Container>
         <Row>
           <Col>
             {" "}
-            <button className="buttonsavenext" onClick={savehandler}>
-              Save{" "}
-            </button>
-          </Col>
-          <Col>
-            {" "}
-            <button className="buttonsavenext" onClick={edithandler}>
-              Edit{" "}
-            </button>
+            {saved && (
+              <button className="buttonsavenext centbutt" onClick={savehandler}>
+                Save{" "}
+              </button>
+            )}
+            {!saved && (
+              <button className="buttonsavenext centbutt" onClick={edithandler}>
+                Edit{" "}
+              </button>
+            )}
           </Col>
         </Row>
       </Container>

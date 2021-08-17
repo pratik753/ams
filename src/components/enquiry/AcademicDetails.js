@@ -18,31 +18,6 @@ const AcademicDetails = () => {
     console.log(exam);
     setexamtype(exam);
   };
-  const courses = {
-    Btech: [
-      "ETC",
-      "CS & IT",
-      "CSE",
-      "CSE AIML",
-      "CST",
-      "EE",
-      "EEE",
-      "ME",
-      "CIVIL",
-      "BIOTECH",
-    ],
-    Other: [
-      "M.Sc(Biotechnology)",
-      "B.Sc(Appl. Microbiology)",
-      "B.Sc(Biotechnology)",
-      "BCA",
-      "BBA",
-      "M.TECH(Comp. Sc.)",
-      "MTech(ETC)",
-      "MCA",
-      "MBA",
-    ],
-  };
 
   const [saved, setsaved] = useState(false);
   const savehandler = () => {
@@ -82,29 +57,65 @@ const AcademicDetails = () => {
   };
   let schoolno = localStorage.getItem("schoolno");
 
-  const centernohandler = (e) => {
-    localStorage.setItem("centerno", e.target.value);
-    setq5(localStorage.getItem("centerno"));
-  };
-  let centerno = localStorage.getItem("centerno");
-
   const tenthhandler = (e) => {
     localStorage.setItem("tenth", e.target.value);
     setq6(localStorage.getItem("tenth"));
   };
   let tenth = localStorage.getItem("tenth");
 
-  const twelvehandler = (e) => {
-    localStorage.setItem("twelve", e.target.value);
-    setq7(localStorage.getItem("twelve"));
+  const tenrollhandler = (e) => {
+    localStorage.setItem("tenroll", e.target.value);
+    setq5(localStorage.getItem("tenroll"));
   };
-  let twelve = localStorage.getItem("twelve");
+  let tenroll = localStorage.getItem("tenroll");
 
-  const thriteenhandler = (e) => {
-    localStorage.setItem("thriteen", e.target.value);
-    setq8(localStorage.getItem("thriteen"));
+  const tenthperhandler = (e) => {
+    localStorage.setItem("tenthper", e.target.value);
+    setq6(localStorage.getItem("tenthper"));
   };
-  let thriteen = localStorage.getItem("thriteen");
+  let tenthper = localStorage.getItem("tenthper");
+
+  const tenthyearhandler = (e) => {
+    localStorage.setItem("tenthyear", e.target.value);
+    setq6(localStorage.getItem("tenthyear"));
+  };
+  let tenthyear = localStorage.getItem("tenthyear");
+
+  const twerollhandler = (e) => {
+    localStorage.setItem("tweroll", e.target.value);
+    setq5(localStorage.getItem("tweroll"));
+  };
+  let tweroll = localStorage.getItem("tweroll");
+
+  const tweperhandler = (e) => {
+    localStorage.setItem("tweper", e.target.value);
+    setq6(localStorage.getItem("tweper"));
+  };
+  let tweper = localStorage.getItem("tweper");
+
+  const tweyearhandler = (e) => {
+    localStorage.setItem("tweyear", e.target.value);
+    setq6(localStorage.getItem("tweyear"));
+  };
+  let tweyear = localStorage.getItem("tweyear");
+
+  const thridrollhandler = (e) => {
+    localStorage.setItem("thridroll", e.target.value);
+    setq5(localStorage.getItem("thridroll"));
+  };
+  let thridroll = localStorage.getItem("thridroll");
+
+  const thridperhandler = (e) => {
+    localStorage.setItem("thridper", e.target.value);
+    setq6(localStorage.getItem("thridper"));
+  };
+  let thridper = localStorage.getItem("thridper");
+
+  const thridyearhandler = (e) => {
+    localStorage.setItem("thridyear", e.target.value);
+    setq6(localStorage.getItem("thridyear"));
+  };
+  let thridyear = localStorage.getItem("thridyear");
 
   return (
     <>
@@ -127,7 +138,7 @@ const AcademicDetails = () => {
             {saved && (
               <input
                 className="inputstyleform"
-                type="text"
+                type="number"
                 name="first_name"
                 placeholder="Rank"
                 value={rank}
@@ -141,7 +152,7 @@ const AcademicDetails = () => {
             {saved && (
               <input
                 className="inputstyleform"
-                type="text"
+                type="number"
                 name="first_name"
                 placeholder="Rank"
                 value={Application}
@@ -153,63 +164,63 @@ const AcademicDetails = () => {
         </Row>
         <Row>
           <Col className="fieldcol">
-            <div className="labelfield">+2 Roll No.</div>
+            <div className="labelfield">10th Roll No.</div>
             {saved && (
               <input
                 className="inputstyleform"
-                type="text"
+                type="number"
                 name="first_name"
                 placeholder="Roll No"
-                value={roll}
-                onChange={rollhandler}
+                value={tenroll}
+                onChange={tenrollhandler}
               />
             )}
-            {!saved && <div className="labelfieldinput">{roll}</div>}
+            {!saved && <div className="labelfieldinput">{tenroll}</div>}
           </Col>
 
-          <Col className="fieldcol">
-            <div className="labelfield">+2 School No.</div>
-            {saved && (
-              <input
-                className="inputstyleform"
-                type="text"
-                name="first_name"
-                placeholder="School No"
-                value={schoolno}
-                onChange={schoolnohandler}
-              />
-            )}
-            {!saved && <div className="labelfieldinput">{schoolno}</div>}
-          </Col>
-          <Col className="fieldcol">
-            <div className="labelfield">+2 Center No.</div>
-            {saved && (
-              <input
-                className="inputstyleform"
-                type="text"
-                name="first_name"
-                placeholder="Center No"
-                value={centerno}
-                onChange={centernohandler}
-              />
-            )}
-            {!saved && <div className="labelfieldinput">{centerno}</div>}
-          </Col>
-        </Row>
-        <Row>
           <Col className="fieldcol">
             <div className="labelfield">Aggr. % in 10th</div>
             {saved && (
               <input
                 className="inputstyleform"
-                type="text"
+                type="number"
                 name="first_name"
                 placeholder="%"
-                value={tenth}
-                onChange={tenthhandler}
+                value={tenthper}
+                onChange={tenthperhandler}
               />
             )}
-            {!saved && <div className="labelfieldinput">{tenth}</div>}
+            {!saved && <div className="labelfieldinput">{tenthper}</div>}
+          </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">10th Passing Year</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="number"
+                name="first_name"
+                placeholder="Year"
+                value={tenthyear}
+                onChange={tenthyearhandler}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{tenthyear}</div>}
+          </Col>
+        </Row>
+        <Row>
+          <Col className="fieldcol">
+            <div className="labelfield">12th Roll No.</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="number"
+                name="first_name"
+                placeholder="Roll No."
+                value={tweroll}
+                onChange={twerollhandler}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{tweroll}</div>}
           </Col>
 
           <Col className="fieldcol">
@@ -217,64 +228,88 @@ const AcademicDetails = () => {
             {saved && (
               <input
                 className="inputstyleform"
-                type="text"
+                type="number"
                 name="first_name"
                 placeholder="%"
-                value={twelve}
-                onChange={twelvehandler}
+                value={tweper}
+                onChange={tweperhandler}
               />
             )}
-            {!saved && <div className="labelfieldinput">{twelve}</div>}
+            {!saved && <div className="labelfieldinput">{tweper}</div>}
           </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">Passing Year 12</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="number"
+                name="first_name"
+                placeholder="Year"
+                value={tweyear}
+                onChange={tweyearhandler}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{tweyear}</div>}
+          </Col>
+        </Row>
+        <Row>
+          <Col className="fieldcol">
+            <div className="labelfield">13th Roll No.</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="number"
+                name="first_name"
+                placeholder="Roll No."
+                value={thridroll}
+                onChange={thridrollhandler}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{thridroll}</div>}
+          </Col>
+
           <Col className="fieldcol">
             <div className="labelfield">Aggr. % in 13th</div>
             {saved && (
               <input
                 className="inputstyleform"
-                type="text"
+                type="number"
                 name="first_name"
                 placeholder="%"
-                value={thriteen}
-                onChange={thriteenhandler}
+                value={thridper}
+                onChange={thridperhandler}
               />
             )}
-            {!saved && <div className="labelfieldinput">{thriteen}</div>}
+            {!saved && <div className="labelfieldinput">{thridper}</div>}
+          </Col>
+          <Col className="fieldcol">
+            <div className="labelfield">Passing Year 13</div>
+            {saved && (
+              <input
+                className="inputstyleform"
+                type="number"
+                name="first_name"
+                placeholder="Year"
+                value={thridyear}
+                onChange={thridyearhandler}
+              />
+            )}
+            {!saved && <div className="labelfieldinput">{thridyear}</div>}
           </Col>
         </Row>
+
         <Row>
           <Col className="fieldcol">
-            <select id="examtype" name="enquiry_course">
-              {courses.Btech.map((el) => (
-                <option value={el}>{`Btech ${el}`}</option>
-              ))}
-              {courses.Other.map((el) => (
-                <option value={el}>{el}</option>
-              ))}
-            </select>
+            <span className="labelfield">10 Result</span>
+            <input className="examtype" type="file" />
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            {" "}
-            <button className="buttonupload" onClick={savehandler}>
-              Rank Card{""}
-            </button>
-            <span className="labelfield">Upload</span>
-            {/* <div></div> */}
+          <Col className="fieldcol">
+            <span className="labelfield">12 Result</span>
+            <input className="examtype" type="file" />
           </Col>
-          <Col>
-            {" "}
-            <button className="buttonupload" onClick={edithandler}>
-              10 Result{" "}
-            </button>
-            <span className="labelfield">Upload</span>
-          </Col>
-          <Col>
-            {" "}
-            <button className="buttonupload" onClick={edithandler}>
-              12 Result{" "}
-            </button>
-            <span className="labelfield">Upload</span>
+          <Col className="fieldcol">
+            <span className="labelfield">13 Result</span>
+            <input className="examtype" type="file" />
           </Col>
         </Row>
       </Container>
@@ -282,15 +317,16 @@ const AcademicDetails = () => {
         <Row>
           <Col>
             {" "}
-            <button className="buttonsavenext" onClick={savehandler}>
-              Save{" "}
-            </button>
-          </Col>
-          <Col>
-            {" "}
-            <button className="buttonsavenext" onClick={edithandler}>
-              Edit{" "}
-            </button>
+            {saved && (
+              <button className="buttonsavenext centbutt" onClick={savehandler}>
+                Save{" "}
+              </button>
+            )}
+            {!saved && (
+              <button className="buttonsavenext centbutt" onClick={edithandler}>
+                Edit{" "}
+              </button>
+            )}
           </Col>
         </Row>
       </Container>

@@ -1,0 +1,14 @@
+@media (min-width:1100px) {
+    .logindiv {
+        position: absolute;
+        top: 5.5rem;
+        right: 50%;
+        margin-right: -600px;
+        border-radius: 5px;
+        z-index: 9;
+        box-shadow: 0 0 10px #000;
+    }
+    .card-bodydiv {
+        padding: 17px 21px;
+    }
+}

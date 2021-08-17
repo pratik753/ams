@@ -2,7 +2,7 @@ import { useState } from "react";
 import Login from "./Login";
 import Regbox from "./Regbox";
 import "./Regdiv.css";
-const Regdiv = () => {
+const Regdiv = (props) => {
   const [emailotp, setotpemail] = useState(false);
   const [phoneotp, setotpphone] = useState(false);
   const [regbox, setregbox] = useState(true);
@@ -21,16 +21,14 @@ const Regdiv = () => {
     console.log(data);
     setregbox(true);
   };
+  function setlogin(a) {
+    console.log(a);
+    props.onlogin(true);
+  }
   return (
     <>
-      <br />
-      <br />
-      {regbox && <Regbox onregbox={regboxhandler} />}
-      {!regbox && <Login onlogbox={loginboxhandler} />}
-      <br />
-      <br />
-      <br />
-      <h2>Steps to Follow : </h2>
+      {regbox && <Regbox onregbox={regboxhandler} onlogin={setlogin} />}
+      {!regbox && <Login onlogbox={loginboxhandler} onlogin={setlogin} />}
     </>
   );
 };
